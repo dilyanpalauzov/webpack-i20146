@@ -1,0 +1,13 @@
+{
+  "name": "b",
+  "author": "A",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "scripts": {
+    "bundle": "webpack --mode production"
+  }
+}
