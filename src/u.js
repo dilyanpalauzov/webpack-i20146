@@ -1,7 +1,6 @@
-class A {
+export default class {
     constructor() {
 	console.log("UU");
     }
-};
+}
 
-export default A;
