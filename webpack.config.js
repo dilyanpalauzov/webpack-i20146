@@ -1,3 +1,5 @@
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 export default {
     optimization: {
         minimize: false,
@@ -16,9 +18,25 @@ export default {
     node: { global: false },
     module: {
         rules: [{
+            test: /\.styl$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                {
+                    loader: 'css-loader'
+                },
+                {
+                    loader: 'stylus-loader'
+                }
+            ]
+        }, {
             test: /\.js$/,
             exclude: /node_modules/
         }]
     },
     devtool: false,
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 't.css'
+        }),
+    ]
 };
